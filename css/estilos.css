@@ -344,12 +344,27 @@ h3 { font-size: clamp(28px, 3vw, 44px); }
 /* =====================================================================
    PÁGINA: TRABAJOS (trabajos.html) · predomina el TURQUESA
    ===================================================================== */
-.bento {
-  display: grid; gap: clamp(12px, 1.4vw, 20px);
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  grid-auto-rows: auto;               /* cada tarjeta define su alto; la fila toma el de la más alta */
-  padding-bottom: clamp(60px, 10vw, 120px);
-}
+/* --- Lista de trabajos: pieza a un lado, información al otro, alternando ---
+   Cada pieza respeta su formato: cuadrada (1:1), vertical (4:5) o póster (842 × 1190). */
+.trabajos { display: grid; gap: clamp(72px, 10vw, 140px); padding: clamp(20px, 3vw, 40px) 0 clamp(80px, 12vw, 140px); }
+.trabajo { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(32px, 6vw, 96px); }
+.trabajo--der .trabajo__pieza { order: 2; }              /* la pieza pasa a la derecha */
+.trabajo__pieza { width: 100%; justify-self: center; }
+.pieza--cuadrada { aspect-ratio: 1; max-width: 560px; }
+.pieza--vertical { aspect-ratio: 4 / 5; max-width: 460px; }
+.pieza--poster   { aspect-ratio: 842 / 1190; max-width: 430px; }
+.trabajo__info { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; max-width: 520px; }
+.trabajo--izq .trabajo__info { justify-self: start; }
+.trabajo--der .trabajo__info { justify-self: end; }
+.trabajo__info .etiqueta { color: var(--acento); }
+.trabajo__info h2 { font-size: clamp(34px, 3.6vw, 56px); line-height: 1.05; }
+.trabajo__desc { margin: 0; color: var(--texto-suave); font-size: clamp(16px, 1.15vw, 18px); line-height: 1.65; }
+.trabajo__ficha { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 18px; width: 100%; margin: 8px 0 6px; }
+.trabajo__ficha div { padding-top: 12px; border-top: 1px solid var(--linea); }
+.trabajo__ficha dt { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--acento); margin-bottom: 6px; }
+.trabajo__ficha dd { margin: 0; font-size: 14px; line-height: 1.45; }
+.trabajo__info .boton { margin-top: 6px; margin-left: -6px; }
+
 .tarjeta {
   position: relative; overflow: hidden; border-radius: var(--radio);
   background: var(--fondo-2); border: 1px solid var(--linea);
@@ -362,25 +377,6 @@ h3 { font-size: clamp(28px, 3vw, 44px); }
 }
 .tarjeta:hover::before, .tarjeta.en-foco::before { opacity: 1; }
 .tarjeta__escena { position: absolute; inset: 0; z-index: 1; }
-/* Datos de la tarjeta: tipo, nombre y botón, con aire entre ellos */
-.tarjeta__info {
-  position: absolute; left: 0; bottom: 0; z-index: 4; pointer-events: none;
-  padding: clamp(20px, 2.2vw, 30px);
-  display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
-}
-.tarjeta__info .etiqueta { color: var(--acento); }
-.tarjeta__info h2 { font-size: clamp(32px, 3vw, 48px); }
-.tarjeta__info .boton { pointer-events: auto; margin-top: 8px; margin-left: -6px; background: rgba(15, 13, 24, 0.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-radius: 4px; }
-/* degradado detrás del texto para que siempre se lea */
-.tarjeta__info::before { content: ""; position: absolute; inset: -60px -40px 0 -40px; z-index: -1; background: radial-gradient(ellipse at 20% 100%, rgba(15, 13, 24, 0.9), rgba(15, 13, 24, 0) 70%); }
-
-/* Escritorio: Expiria y Lit Killah lado a lado; el lyric (credencial) junto al
-   cartel de Zagreb en formato póster; el caso de estudio a todo el ancho */
-.t-expiria { grid-column: span 3; min-height: clamp(480px, 44vw, 660px); }
-.t-lit     { grid-column: span 3; min-height: clamp(480px, 44vw, 660px); }
-.t-lyric   { grid-column: span 4; }
-.t-zagreb  { grid-column: span 2; }
-.t-caso    { grid-column: span 6; min-height: clamp(300px, 26vw, 380px); }
 
 /* — Expiria: pared de stickers elásticos — */
 .stickers { position: absolute; inset: 0; overflow: hidden; user-select: none; -webkit-user-select: none; background: radial-gradient(circle at 30% 20%, #1D1A27, var(--fondo-2) 70%); }
@@ -414,11 +410,12 @@ h3 { font-size: clamp(28px, 3vw, 44px); }
 
 /* — Lyric video: credencial metálica que refleja el video (Reflective Card) —
    La credencial va centrada y, debajo, el nombre del proyecto y el botón. */
-.t-lyric { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(18px, 2vw, 28px); padding: clamp(36px, 4vw, 56px) clamp(20px, 3vw, 40px) clamp(24px, 2.6vw, 34px); }
-.credencial-escena { position: relative; inset: auto; display: grid; place-items: center; perspective: 900px; }
+/* la pieza vertical del lyric: fondo oscuro con la credencial centrada */
+.t-lyric { background: radial-gradient(circle at 50% 40%, #1C2A26, var(--fondo-2) 70%); }
+.credencial-escena { display: grid; place-items: center; perspective: 900px; }
 .credencial {
   --rx: 0deg; --ry: 0deg; --lx: 50%; --ly: 50%; --px: 0%; --py: 0%;
-  position: relative; width: clamp(220px, 19vw, 290px); aspect-ratio: 5 / 7.6; border-radius: 18px; overflow: hidden;
+  position: relative; width: min(62%, 290px); aspect-ratio: 5 / 7.6; border-radius: 18px; overflow: hidden;
   transform: rotateX(var(--rx)) rotateY(var(--ry)); transform-style: preserve-3d;
   background: linear-gradient(145deg, #6F6B78, #2B2933 45%, #8C8896 70%, #3A3842);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 0 0 1px rgba(255, 255, 255, 0.18) inset,
@@ -437,7 +434,7 @@ h3 { font-size: clamp(28px, 3vw, 44px); }
   background: radial-gradient(circle at var(--lx) var(--ly), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 45%),
               linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.55) calc(var(--lx) - 6%), transparent calc(var(--lx) + 14%)); }
 .credencial__ranura { position: absolute; top: 14px; left: 50%; width: 46px; height: 8px; margin-left: -23px; border-radius: 99px; background: #0F0D18; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.35); }
-.credencial__contenido { background: linear-gradient(to top, rgba(10, 9, 15, 0.82) 0%, rgba(10, 9, 15, 0.35) 42%, transparent 62%); position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 38px 18px 18px; color: #fff; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45); transform: translateZ(20px); }
+.credencial__contenido { background: linear-gradient(to top, rgba(10, 9, 15, 0.9) 0%, rgba(10, 9, 15, 0.6) 45%, transparent 70%); position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 38px 18px 18px; color: #fff; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45); transform: translateZ(20px); }
 .credencial__arriba { display: flex; justify-content: space-between; align-items: center; }
 .credencial__marca { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; padding: 5px 10px; border-radius: 99px; background: rgba(255, 255, 255, 0.14); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.25); }
 .credencial__chip { width: 34px; height: 26px; border-radius: 6px; background: linear-gradient(135deg, #E9D8A6, #A8915A 50%, #F2E6C2); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25); }
@@ -447,11 +444,7 @@ h3 { font-size: clamp(28px, 3vw, 44px); }
 .credencial__datos { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 .credencial__datos span { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 4px 8px; border-radius: 99px; background: rgba(15, 13, 24, 0.45); border: 1px solid rgba(255, 255, 255, 0.2); }
 .credencial__codigo { margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.25); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, 0.75); }
-.credencial__pista { position: absolute; top: -28px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--texto-suave); pointer-events: none; }
-.t-lyric .tarjeta__info { position: relative; left: auto; bottom: auto; padding: 0; align-items: center; text-align: center; }
-.t-lyric .tarjeta__info::before, .t-zagreb .tarjeta__info::before { display: none; }
-.t-lyric .tarjeta__info h2 { font-size: clamp(24px, 2.2vw, 34px); max-width: 24ch; line-height: 1.1; }
-.t-lyric .tarjeta__info .boton { margin-left: 0; }
+.credencial__pista { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--texto-suave); pointer-events: none; }
 
 /* — Lit Killah: pasaje 3D (túnel de imágenes) — */
 .pasaje { position: absolute; inset: 0; overflow: hidden; perspective: 520px; background: radial-gradient(circle at 50% 42%, #10221D, #07060B 70%); cursor: pointer; touch-action: pan-y; }
@@ -473,10 +466,7 @@ h3 { font-size: clamp(28px, 3vw, 44px); }
 /* — Zagreb: antes y después — */
 .comparar { position: absolute; inset: 0; touch-action: pan-y; user-select: none; }
 /* Zagreb: contenedor vertical con la proporción exacta del cartel (842 × 1190): se ve entero, sin recortes */
-.t-zagreb { display: flex; flex-direction: column; }
-.t-zagreb .comparar { position: relative; inset: auto; width: 100%; aspect-ratio: 842 / 1190; flex: none; overflow: hidden; }
 .t-zagreb .comparar > img, .t-zagreb .comparar > video { object-fit: contain; object-position: 50% 50%; }
-.t-zagreb .tarjeta__info { position: relative; left: auto; bottom: auto; }
 .comparar > img, .comparar > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 .comparar__despues { clip-path: inset(0 0 0 var(--corte, 50%)); }
 .comparar__linea { position: absolute; top: 0; bottom: 0; left: var(--corte, 50%); width: 2px; background: var(--texto); transform: translateX(-1px); z-index: 2; }
@@ -486,10 +476,12 @@ h3 { font-size: clamp(28px, 3vw, 44px); }
 .comparar__rotulo.der { right: 14px; }
 
 /* — Caso de estudio: carrusel con perspectiva — */
-.flujo { position: absolute; inset: 0 0 0 40%; perspective: 1000px; display: grid; place-items: center; overflow: hidden; }
-.flujo__item { position: absolute; height: 72%; aspect-ratio: 1; border-radius: 10px; overflow: hidden; transition: transform 0.9s var(--suave), opacity 0.9s, filter 0.9s; box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5); }
-.flujo__item img { width: 100%; height: 100%; object-fit: cover; }
-.t-caso .tarjeta__info .etiqueta { color: var(--amarillo); }
+.flujo { position: absolute; inset: 0; perspective: 1000px; display: grid; place-items: center; overflow: hidden; }
+.flujo__item { position: absolute; height: 64%; aspect-ratio: 1; border-radius: 10px; overflow: hidden; transition: transform 0.9s var(--suave), opacity 0.9s, filter 0.9s; box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5); }
+.flujo__item img { width: 100%; height: 100%; object-fit: contain; background: #0A090F; }
+.t-caso { background: radial-gradient(circle at 50% 45%, #2A1E12, var(--fondo-2) 70%); }
+/* el caso de estudio usa el amarillo de su página */
+.trabajo:has(.t-caso) .trabajo__info .etiqueta, .trabajo:has(.t-caso) .trabajo__ficha dt { color: var(--amarillo); }
 
 /* --- Panel de detalle de cada trabajo --- */
 .detalle {
@@ -529,35 +521,39 @@ h3 { font-size: clamp(28px, 3vw, 44px); }
 .fondo-negro { background: #050505 !important; }
 
 @media (max-width: 1100px) {
-  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .t-expiria, .t-lit { grid-column: span 2; min-height: min(84vw, 760px); }
-  .t-lyric, .t-zagreb { grid-column: span 1; }
-  .t-caso { grid-column: span 2; min-height: 44vw; }
   .ficha { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trabajo__ficha { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .trabajo__ficha div { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 12px; padding: 10px 0; }
+  .trabajo__ficha dt { margin: 2px 0 0; }
+}
+/* Celular y tablet vertical: la pieza arriba y la información abajo */
+@media (max-width: 760px) {
+  .trabajo { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .trabajo--der .trabajo__pieza { order: 0; }
+  .trabajo__info, .trabajo--der .trabajo__info { justify-self: stretch; max-width: none; }
+  .pieza--cuadrada { max-width: 520px; }
+  .pieza--vertical { max-width: 420px; }
+  .pieza--poster { max-width: 400px; }
 }
 @media (max-width: 640px) {
-  .bento { grid-template-columns: minmax(0, 1fr); }
-  .t-expiria { grid-column: auto; min-height: 0; height: 150vw; max-height: 700px; }
   .sticker__color { font-size: 10px; letter-spacing: 0; }
-  .t-lit { grid-column: auto; min-height: 0; height: 140vw; max-height: 680px; }
-  .t-lyric, .t-zagreb { grid-column: auto; }
-  .credencial { width: min(66vw, 270px); }
   .stickers__pista, .pasaje__pista { left: 18px; right: 18px; font-size: 11px; text-align: right; }
-  .t-caso { grid-column: auto; min-height: 0; height: 110vw; max-height: 560px; }
-  .flujo { inset: 0 0 40% 0; }
   .ficha { grid-template-columns: 1fr; }
   .historia > div { grid-template-columns: 1fr; gap: 8px; }
   .galeria .g8, .galeria .g6, .galeria .g4 { grid-column: span 12; }
   .galeria .g3 { grid-column: span 6; }
 }
+/* Celular horizontal: se mantiene pieza | información, con piezas más bajas */
 @media (max-width: 960px) and (orientation: landscape) and (max-height: 500px) {
-  /* celular horizontal: tarjetas de dos en dos */
-  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .t-expiria, .t-lit { grid-column: span 1; min-height: 0; height: 440px; }
-  .t-lyric, .t-zagreb { grid-column: span 1; }
-  .t-caso { grid-column: span 2; min-height: 0; height: 320px; }
+  .trabajo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+  .trabajo--der .trabajo__pieza { order: 2; }
+  .pieza--cuadrada { width: min(100%, 86vh); }
+  .pieza--vertical { width: min(100%, calc(86vh * 4 / 5)); }
+  .pieza--poster   { width: min(100%, calc(86vh * 842 / 1190)); }
+  .credencial { width: 74%; }
+  .credencial__abajo strong { font-size: 18px; }
+  .credencial__datos span:nth-child(3), .credencial__pista { display: none; }
   .sticker__color { font-size: 10px; letter-spacing: 0; }
-  .credencial { width: 220px; }
 }
 
 
@@ -680,7 +676,10 @@ h3 { font-size: clamp(28px, 3vw, 44px); }
 }
 .contacto__lista a:hover, .contacto__lista button:hover { color: var(--acento); padding-left: 12px; }
 .contacto__lista small { font-family: "Outfit", sans-serif; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--texto-suave); white-space: nowrap; }
-.copiado { color: var(--menta) !important; }
+.contacto__lista .descargar { color: var(--acento); }
+.descargar__texto { display: inline-flex; align-items: center; gap: 14px; }
+.descargar__icono { flex: none; width: 1.05em; height: 1.05em; padding: 7px; box-sizing: content-box; border-radius: 50%; background: var(--acento); fill: none; stroke: var(--fondo); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.4s var(--suave); }
+.descargar:hover .descargar__icono { transform: translateY(3px); }
 
 @media (max-width: 860px) {
   .sobre { grid-template-columns: 1fr; }

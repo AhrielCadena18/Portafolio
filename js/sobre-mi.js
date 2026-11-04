@@ -1,7 +1,6 @@
 /* =====================================================================
    SOBRE-MI.JS
    1. Logo dentro de la bolita con el efecto "Tech Text" (js/tech-text.js).
-   2. Botón "Copiar mi correo".
    ===================================================================== */
 
 (() => {
@@ -34,17 +33,4 @@
     if (document.fonts) document.fonts.load('400 64px Ramesha').then(arrancar, arrancar); else arrancar();
   }
 
-  /* ---------- 2. COPIAR EL CORREO ---------- */
-  document.querySelectorAll('[data-copiar]').forEach((b) => b.addEventListener('click', async () => {
-    const etiqueta = b.querySelector('small');
-    const original = etiqueta.textContent;
-    try {
-      await navigator.clipboard.writeText(b.dataset.copiar);
-      etiqueta.textContent = document.documentElement.lang === 'en' ? 'Copied ✓' : 'Copiado ✓';
-    } catch (e) {
-      etiqueta.textContent = b.dataset.copiar;               // si el navegador no deja copiar, lo muestra
-    }
-    b.classList.add('copiado');
-    setTimeout(() => { etiqueta.textContent = original; b.classList.remove('copiado'); }, 2200);
-  }));
 })();

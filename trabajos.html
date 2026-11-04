@@ -35,14 +35,14 @@
       <p class="aparece" data-i18n="tr_intro">Identidad visual, carteles animados y animación tipográfica. Cada proyecto se presenta con su propio movimiento: juega con él y ábrelo para conocer la historia completa.</p>
     </section>
 
-    <!-- ===== CUADRÍCULA BENTO =====
-         El botón "Ver más" de cada tarjeta abre el <template id="p-..."> con su mismo nombre. -->
-    <section class="bento" aria-label="Proyectos" data-i18n-aria="aria_proyectos">
-
-      <!-- EXPIRIA · pared de stickers elásticos (arrastra cualquier pieza de la marca)
-           Para mover un sticker cambia data-x y data-y (en % de la tarjeta);
-           data-rot es su inclinación en grados y --w su ancho. -->
-      <article class="tarjeta t-expiria aparece" id="expiria" data-proyecto="expiria">
+    <!-- ===== LISTA DE TRABAJOS =====
+         Cada trabajo: la pieza a un lado (con su formato: cuadrado, vertical o póster)
+         y la información al otro. Los lados se alternan (izq / der); en celular la
+         pieza va arriba. El botón "Leer más" abre el <template id="p-..."> de abajo.
+         Expiria: para mover un sticker cambia data-x y data-y (en % de la pieza). -->
+    <section class="trabajos" aria-label="Proyectos" data-i18n-aria="aria_proyectos">
+      <article class="trabajo trabajo--izq aparece" id="expiria" data-proyecto="expiria">
+        <div class="trabajo__pieza tarjeta t-expiria pieza--cuadrada">
         <div class="tarjeta__escena stickers" aria-label="Pared de stickers con las piezas de la marca Expiria" data-i18n-aria="aria_stickers">
           <div class="sticker sticker--forma sticker--rect" style="--w:40%;background:#050505" data-x="5" data-y="7" data-rot="-7"><img src="assets/img/expiria/logotipo-verde-chico.webp" alt="Logotipo de Expiria en verde" data-i18n-alt="alt_exp_l1" style="padding:12%"></div>
           <div class="sticker sticker--forma sticker--rect" style="--w:36%;background:#F2ECF2" data-x="54" data-y="5" data-rot="5"><img src="assets/img/expiria/logotipo-negro-chico.webp" alt="Logotipo de Expiria en negro" data-i18n-alt="alt_exp_l3" style="padding:12%"></div>
@@ -57,31 +57,43 @@
           <div class="sticker sticker--forma sticker--rect" style="--w:auto" data-x="77" data-y="71" data-xm="54" data-ym="51" data-rot="3"><span class="sticker__tipo"><small data-i18n="exp_sub">Subtítulos</small>Sifonn</span></div>
           <span class="stickers__pista" data-i18n="pista_stickers">Arrastra los stickers</span>
         </div>
-        <div class="tarjeta__info">
+        </div>
+        <div class="trabajo__info">
           <span class="etiqueta" data-i18n="exp_meta">Identidad visual · 2025</span>
           <h2>Expiria</h2>
-          <button class="boton" type="button" data-abrir="expiria"><span class="c1"></span><span class="c2"></span><span data-i18n="ver_mas">Ver más</span></button>
+          <p class="trabajo__desc" data-i18n="exp_desc">Identidad visual para una empresa de UX/UI que diseña páginas web. Un logotipo tipográfico, el isotipo «E», una paleta con energía digital y un sistema tipográfico pensados para transmitir resultados claros y medibles.</p>
+          <dl class="trabajo__ficha">
+            <div><dt data-i18n="f_contexto">Contexto</dt><dd data-i18n="exp_f2">Materia de Marketing</dd></div>
+            <div><dt data-i18n="f_herramientas">Herramientas</dt><dd>Illustrator</dd></div>
+            <div><dt data-i18n="f_rol">Mi rol</dt><dd data-i18n="exp_f4">Diseño de toda la identidad</dd></div>
+          </dl>
+          <button class="boton" type="button" data-abrir="expiria"><span class="c1"></span><span class="c2"></span><span data-i18n="leer_mas">Leer más</span></button>
         </div>
       </article>
 
-      <!-- LIT KILLAH · pasaje 3D: un túnel de imágenes que termina en el cartel animado -->
-      <article class="tarjeta t-lit aparece" id="lit" data-proyecto="lit" data-retraso="1">
+      <article class="trabajo trabajo--der aparece" id="lit" data-proyecto="lit" data-retraso="1">
+        <div class="trabajo__pieza tarjeta t-lit pieza--vertical">
         <div class="tarjeta__escena pasaje" data-cursor="Mantén<br>para acelerar" data-i18n-cursor="cursor_pasaje">
           <div class="pasaje__mundo"></div>
           <span class="pasaje__pista" data-i18n="pista_pasaje">Mantén presionado para avanzar más rápido</span>
           <button class="boton pasaje__otra" type="button"><span class="c1"></span><span class="c2"></span><span data-i18n="pasaje_otra">Recorrer de nuevo</span></button>
         </div>
-        <div class="tarjeta__info">
+        </div>
+        <div class="trabajo__info">
           <span class="etiqueta" data-i18n="lit_meta">Cartel tipográfico animado · 2025</span>
           <h2>Lit Killah</h2>
-          <button class="boton" type="button" data-abrir="lit"><span class="c1"></span><span class="c2"></span><span data-i18n="ver_mas">Ver más</span></button>
+          <p class="trabajo__desc" data-i18n="lit_desc">Un cartel vertical de siete segundos donde un anillo de texto gira alrededor del artista y convierte su nombre en un halo. Recorre el pasaje: al final te espera el cartel animado.</p>
+          <dl class="trabajo__ficha">
+            <div><dt data-i18n="f_contexto">Contexto</dt><dd data-i18n="lyr_f2">Programas de Diseño Digital 1</dd></div>
+            <div><dt data-i18n="f_herramientas">Herramientas</dt><dd>After Effects</dd></div>
+            <div><dt data-i18n="f_equipo">Equipo</dt><dd data-i18n="f_equipo_vv">Verónica Vidaurre y Ahriel Cadena García</dd></div>
+          </dl>
+          <button class="boton" type="button" data-abrir="lit"><span class="c1"></span><span class="c2"></span><span data-i18n="leer_mas">Leer más</span></button>
         </div>
       </article>
 
-      <!-- LYRIC VIDEO · bloque "sobre": la frase se ilumina palabra por palabra mientras avanza el video -->
-      <article class="tarjeta t-lyric aparece" id="lyric" data-proyecto="lyric">
-        <!-- Credencial metálica que refleja el video en loop y capta la luz al inclinarse
-             (mouse en computadora; giro del teléfono o toque en celular). No usa la cámara. -->
+      <article class="trabajo trabajo--izq aparece" id="lyric" data-proyecto="lyric">
+        <div class="trabajo__pieza tarjeta t-lyric pieza--vertical">
         <div class="tarjeta__escena credencial-escena">
           <div class="credencial" tabindex="0" role="img" aria-label="Credencial metálica que refleja el lyric video de My Songs Know What You Did in the Dark" data-i18n-aria="aria_lyric">
             <div class="credencial__reflejo">
@@ -105,15 +117,22 @@
           </div>
           <span class="credencial__pista" data-i18n="pista_credencial">Inclina la credencial</span>
         </div>
-        <div class="tarjeta__info">
+        </div>
+        <div class="trabajo__info">
           <span class="etiqueta" data-i18n="lyr_meta">Lyric video · Animación tipográfica · 2025</span>
           <h2>Fall Out Boy – My Songs Know What You Did in the Dark</h2>
-          <button class="boton" type="button" data-abrir="lyric"><span class="c1"></span><span class="c2"></span><span data-i18n="ver_mas">Ver más</span></button>
+          <p class="trabajo__desc" data-i18n="lyr_desc">Un lyric video vertical de 33 segundos contado solo con tipografía, en blanco y negro: cada palabra entra al ritmo de la canción.</p>
+          <dl class="trabajo__ficha">
+            <div><dt data-i18n="f_contexto">Contexto</dt><dd data-i18n="lyr_f2">Programas de Diseño Digital 1</dd></div>
+            <div><dt data-i18n="f_herramientas">Herramientas</dt><dd>After Effects</dd></div>
+            <div><dt data-i18n="f_equipo">Equipo</dt><dd data-i18n="f_equipo_vv">Verónica Vidaurre y Ahriel Cadena García</dd></div>
+          </dl>
+          <button class="boton" type="button" data-abrir="lyric"><span class="c1"></span><span class="c2"></span><span data-i18n="leer_mas">Leer más</span></button>
         </div>
       </article>
 
-      <!-- ZAGREB · antes y después -->
-      <article class="tarjeta t-zagreb aparece" id="zagreb" data-proyecto="zagreb">
+      <article class="trabajo trabajo--der aparece" id="zagreb" data-proyecto="zagreb">
+        <div class="trabajo__pieza tarjeta t-zagreb pieza--poster">
         <div class="tarjeta__escena comparar" style="--corte:50%">
           <img src="assets/img/zagreb/zagreb-composicion.webp" alt="Cartel de The Zagreb School como composición fija" data-i18n-alt="alt_zagreb_fijo" loading="lazy">
           <video class="comparar__despues" src="assets/video/zagreb-cartel.mp4" poster="assets/img/zagreb/zagreb-poster.webp" muted loop playsinline preload="none" aria-label="Cartel de The Zagreb School animado" data-i18n-aria="aria_zagreb"></video>
@@ -121,25 +140,39 @@
           <span class="comparar__rotulo der" data-i18n="zag_mov">Movimiento</span>
           <span class="comparar__linea"><button class="comparar__tirador" type="button" aria-label="Arrastra para comparar" data-i18n-aria="aria_comparar">⟷</button></span>
         </div>
-        <div class="tarjeta__info">
+        </div>
+        <div class="trabajo__info">
           <span class="etiqueta" data-i18n="zag_meta">Cartel animado · 2025</span>
           <h2>The Zagreb School</h2>
-          <button class="boton" type="button" data-abrir="zagreb"><span class="c1"></span><span class="c2"></span><span data-i18n="ver_mas">Ver más</span></button>
+          <p class="trabajo__desc" data-i18n="zag_desc">Un cartel animado de 26 segundos sobre la Escuela de Zagreb, el movimiento de animación nacido en Croacia. Funciona como composición fija y cobra vida en movimiento: arrastra la línea para comparar.</p>
+          <dl class="trabajo__ficha">
+            <div><dt data-i18n="f_contexto">Contexto</dt><dd data-i18n="zag_f2">Composición y Movimiento</dd></div>
+            <div><dt data-i18n="f_herramientas">Herramientas</dt><dd>Illustrator · After Effects</dd></div>
+            <div><dt data-i18n="f_rol">Mi rol</dt><dd data-i18n="zag_f4">Composición, diseño y animación</dd></div>
+          </dl>
+          <button class="boton" type="button" data-abrir="zagreb"><span class="c1"></span><span class="c2"></span><span data-i18n="leer_mas">Leer más</span></button>
         </div>
       </article>
 
-      <!-- CASO DE ESTUDIO · carrusel con perspectiva (lleva a caso.html) -->
-      <article class="tarjeta t-caso aparece" data-retraso="1">
+      <article class="trabajo trabajo--izq aparece" data-retraso="1">
+        <div class="trabajo__pieza tarjeta t-caso pieza--cuadrada">
         <div class="tarjeta__escena flujo" aria-hidden="true">
           <div class="flujo__item"><img src="assets/img/caso/portada.webp" alt="" loading="lazy"></div>
           <div class="flujo__item"><img src="assets/img/caso/contraportada.webp" alt="" loading="lazy"></div>
           <div class="flujo__item"><img src="assets/img/caso/ilustracion.webp" alt="" loading="lazy"></div>
           <div class="flujo__item"><img src="assets/img/caso/mockup-floral.webp" alt="" loading="lazy"></div>
         </div>
-        <div class="tarjeta__info">
+        </div>
+        <div class="trabajo__info">
           <span class="etiqueta" data-i18n="caso_meta">Caso de estudio · Portada de disco</span>
           <h2 data-i18n="caso_nombre">Un besito más</h2>
-          <a class="boton" href="caso.html"><span class="c1"></span><span class="c2"></span><span data-i18n="leer_caso">Leer el caso</span></a>
+          <p class="trabajo__desc" data-i18n="caso_desc">Portada y contraportada para el disco de Jesse & Joy: un álbum nacido del duelo, convertido en una ofrenda iluminada. El caso recorre la investigación, las ideas y las decisiones detrás de la pieza.</p>
+          <dl class="trabajo__ficha">
+            <div><dt data-i18n="f_contexto">Contexto</dt><dd data-i18n="caso_f_ctx">Diseño Conceptual</dd></div>
+            <div><dt data-i18n="f_herramientas">Herramientas</dt><dd data-i18n="ca_f4">Krita y Canva</dd></div>
+            <div><dt data-i18n="f_rol">Mi rol</dt><dd data-i18n="caso_f_rol">Proyecto individual</dd></div>
+          </dl>
+          <a class="boton" href="caso.html"><span class="c1"></span><span class="c2"></span><span data-i18n="leer_mas">Leer más</span></a>
         </div>
       </article>
     </section>

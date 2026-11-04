@@ -69,7 +69,7 @@
       // nunca se sale de la tarjeta al empezar (en celular las piezas se acomodan solas)
       stickers.forEach((s) => {
         const w = s.el.offsetWidth, h = s.el.offsetHeight, m = 8;
-        const movil = innerWidth <= 640 || (innerHeight <= 500 && innerWidth <= 960); // celular vertical u horizontal
+        const movil = H > W * 1.3;   // pieza mucho más alta que ancha: usa data-xm / data-ym
         const px = movil && s.pxm !== null ? s.pxm : s.px, py = movil && s.pym !== null ? s.pym : s.py;
         s.x = limitar((px / 100) * W, m, Math.max(m, W - w - m));
         s.y = limitar((py / 100) * H, m, Math.max(m, H - h - m));
@@ -311,7 +311,7 @@
     let arrastrando = false;
     const fijar = (pct) => comparar.style.setProperty('--corte', limitar(pct, 4, 96) + '%');
     const desdeX = (x) => { const r = comparar.getBoundingClientRect(); fijar(((x - r.left) / r.width) * 100); };
-    comparar.addEventListener('pointerdown', (e) => { if (e.target.closest('.tarjeta__info')) return; arrastrando = true; desdeX(e.clientX); });
+    comparar.addEventListener('pointerdown', (e) => { arrastrando = true; desdeX(e.clientX); });
     addEventListener('pointermove', (e) => { if (arrastrando) desdeX(e.clientX); });
     addEventListener('pointerup', () => { arrastrando = false; });
     let inicio = null;

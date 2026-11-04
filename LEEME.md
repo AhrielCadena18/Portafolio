@@ -19,9 +19,9 @@ Guía rápida para abrir, revisar, editar y publicar tu portafolio tú misma.
 | Archivo o carpeta | Para qué sirve |
 | --- | --- |
 | `index.html` | Inicio (rojo): bolita, "Del caos a la forma", lo que hago, anillos con las 5 piezas y cierre |
-| `trabajos.html` | Trabajos (turquesa): cuadrícula y el contenido completo de cada proyecto |
+| `trabajos.html` | Trabajos (turquesa): cada trabajo con su pieza a un lado y la información al otro, y el contenido completo de cada proyecto |
 | `caso.html` | Caso de estudio (amarillo): "Un besito más" en formato revista |
-| `sobre-mi.html` | Sobre mí (rosa): bio, bolita con el logo y contacto |
+| `sobre-mi.html` | Sobre mí (rosa): bio, bolita con el logo, contacto y descarga del PDF |
 | `css/estilos.css` | Colores, tipografías y diseño de todas las páginas |
 | `js/textos.js` | Todos los textos en inglés |
 | `js/comun.js` | Idioma, menú, cursor, animación de letras y transición entre páginas |
@@ -29,10 +29,11 @@ Guía rápida para abrir, revisar, editar y publicar tu portafolio tú misma.
 | `js/trabajos.js` | Stickers de Expiria, pasaje de Lit Killah, credencial reflectante del lyric video, antes/después de Zagreb y panel de detalle |
 | `js/caso.js` | Revista que pasa páginas, audio y visor de láminas |
 | `js/tech-text.js` | Efecto "Tech Text" (de React Bits, pasado a JavaScript puro) |
-| `js/sobre-mi.js` | Activa el Tech Text en la bolita rosada y el botón para copiar el correo |
+| `js/sobre-mi.js` | Activa el Tech Text en la bolita rosada |
 | `assets/img/` | Imágenes (`.webp`) por proyecto |
 | `assets/video/` | Videos `.mp4` (H.264, menos de 25 MB cada uno) |
 | `assets/audio/` | Fragmento de 20 s del álbum |
+| `assets/identidad-visual/` | Tu portafolio en PDF (`ahriel-cadena-portafolio.pdf`), que se descarga desde "Sobre mí". Para cambiarlo, reemplaza el archivo con el mismo nombre |
 | `assets/fonts/` | Ramesha, Gebuk y Outfit |
 | `.nojekyll` | Archivo vacío que le dice a GitHub Pages que publique todo tal cual |
 
