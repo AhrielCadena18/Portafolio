@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es" class="cargando">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ahriel G. · Diseñadora digital</title>
+  <meta name="description" content="Portafolio de Ahriel Cadena García (Ahriel G.), diseñadora digital freelance en La Paz, Bolivia: branding, diseño editorial, animación tipográfica y web.">
+  <meta name="theme-color" content="#0F0D18">
+  <link rel="icon" href="assets/img/marca/favicon.png">
+  <link rel="preload" href="assets/fonts/ramesha-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="assets/fonts/gebuk-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="pagina-inicio">
+  <a class="saltar" href="#contenido" data-i18n="saltar">Saltar al contenido</a>
+
+  <!-- ===== PRECARGA: el porcentaje sube según lo que de verdad se carga ===== -->
+  <div class="precarga" aria-hidden="true">
+    <div>
+      <img src="assets/img/marca/logo-blanco.webp" alt="">
+      <div class="precarga__barra"><i></i></div>
+      <div class="precarga__num"><span>0</span>%</div>
+    </div>
+  </div>
+
+  <!-- ===== CABECERA (igual en todas las páginas) ===== -->
+  <header class="cabecera">
+    <a class="cabecera__logo" href="index.html" aria-label="Ahriel G. · Inicio" data-i18n-aria="aria_inicio">
+      <img src="assets/img/marca/logo-blanco.webp" alt="Ahriel g." width="777" height="280">
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <ul class="menu__lista">
+        <li><a class="menu__enlace" href="index.html" aria-current="page"><span data-i18n="nav_inicio">Inicio</span></a></li>
+        <li><a class="menu__enlace" href="trabajos.html"><span data-i18n="nav_trabajos">Trabajos</span></a></li>
+        <li><a class="menu__enlace" href="caso.html"><span data-i18n="nav_caso">Caso de estudio</span></a></li>
+        <li><a class="menu__enlace" href="sobre-mi.html"><span data-i18n="nav_sobre">Sobre mí</span></a></li>
+      </ul>
+      <button class="idioma" type="button"><b>ES</b> / EN</button>
+      <button class="menu__abrir" type="button" aria-expanded="false" aria-label="Abrir menú" data-i18n-aria="aria_menu"><i></i><i></i></button>
+    </nav>
+  </header>
+
+  <!-- ===== LIENZO: bolita roja y fragmentos (js/inicio.js) ===== -->
+  <canvas class="inicio-lienzo" aria-hidden="true"></canvas>
+  <div class="avance" aria-hidden="true"><i></i><span>0%</span></div>
+
+  <main id="contenido">
+
+    <!-- ===== 1. PORTADA =====
+         "Del caos a la forma" y el texto aparecen cuando se completa el gesto
+         de mantener presionado sobre la bolita (o la tecla Espacio en el botón). -->
+    <section class="portada" aria-labelledby="titulo-portada">
+      <p class="etiqueta portada__etiqueta sobre-lienzo" data-i18n="portada_etiqueta">Diseñadora digital freelance · La Paz, Bolivia</p>
+      <h1 id="titulo-portada" class="portada__titulo sobre-lienzo">Ahriel g.</h1>
+      <p class="portada__frase sobre-lienzo" data-partir data-i18n="portada_frase">Del caos a la <em>forma</em></p>
+      <div class="portada__pie sobre-lienzo">
+        <p class="portada__texto" data-i18n="portada_texto">Diseño marcas, piezas editoriales, animación tipográfica y webs, con ojo para los detalles.</p>
+        <button class="mantener" type="button">
+          <svg class="mantener__anillo" viewBox="0 0 44 44" aria-hidden="true"><circle class="fondo" cx="22" cy="22" r="20"/><circle class="lleno" cx="22" cy="22" r="20"/></svg>
+          <span class="solo-mouse" data-i18n="mantener_mouse">Mantén presionado para ordenar el caos</span>
+          <span class="solo-tactil" data-i18n="mantener_tactil">Mantén el dedo para ordenar el caos</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== 2. LO QUE HAGO: una sola frase grande, sin lista ===== -->
+    <section class="bloque bloque--hago" aria-labelledby="titulo-hago">
+      <div class="contenedor">
+        <p class="etiqueta etiqueta--raya aparece sobre-lienzo" data-i18n="hago_etiqueta">Lo que hago</p>
+        <h2 id="titulo-hago" class="aparece sobre-lienzo" data-i18n="hago_titulo">Tomo ideas dispersas<br>y las vuelvo <span class="acento">piezas</span></h2>
+      </div>
+    </section>
+
+    <!-- ===== 3. CINCO PIEZAS: anillos transparentes =====
+         Cada anillo tiene una capa trasera y una delantera; la bolita pasa por el medio.
+         Las letras se crean solas con js/inicio.js a partir de data-texto. -->
+    <section class="bloque" aria-labelledby="titulo-trabajos">
+      <div class="contenedor">
+        <p class="etiqueta etiqueta--raya aparece sobre-lienzo" data-i18n="trab_etiqueta">Trabajos seleccionados</p>
+        <h2 id="titulo-trabajos" class="aparece sobre-lienzo" data-i18n="trab_titulo">Cinco piezas, <span class="acento">una misma órbita</span></h2>
+        <div class="anillos">
+          <a class="anillo" href="trabajos.html#expiria" data-texto="EXPIRIA · " data-cursor="Ver<br>proyecto" data-i18n-cursor="cursor_ver">
+            <span class="solo-lector">Expiria</span>
+            <span class="anillo__dato" data-i18n="anillo_1">Identidad visual · 2025</span>
+          </a>
+          <a class="anillo" href="caso.html" data-texto="UN BESITO MÁS · " data-cursor="Leer<br>el caso" data-i18n-cursor="cursor_caso">
+            <span class="solo-lector">Un besito más</span>
+            <span class="anillo__dato" data-i18n="anillo_2">Caso de estudio · Portada de disco</span>
+          </a>
+          <a class="anillo" href="trabajos.html#zagreb" data-texto="ZAGREB SCHOOL · " data-cursor="Ver<br>proyecto" data-i18n-cursor="cursor_ver">
+            <span class="solo-lector">The Zagreb School</span>
+            <span class="anillo__dato" data-i18n="anillo_3">Cartel animado · 2025</span>
+          </a>
+          <a class="anillo" href="trabajos.html#lit" data-texto="LIT KILLAH · " data-cursor="Ver<br>proyecto" data-i18n-cursor="cursor_ver">
+            <span class="solo-lector">Lit Killah</span>
+            <span class="anillo__dato" data-i18n="anillo_4">Cartel tipográfico animado · 2025</span>
+          </a>
+          <a class="anillo" href="trabajos.html#lyric" data-texto="LYRIC VIDEO · " data-cursor="Ver<br>proyecto" data-i18n-cursor="cursor_ver">
+            <span class="solo-lector">Fall Out Boy – My Songs Know What You Did in the Dark</span>
+            <span class="anillo__dato" data-i18n="anillo_5">Lyric video · Fall Out Boy · 2025</span>
+          </a>
+        </div>
+        <p class="aparece sobre-lienzo" style="margin-top:40px"><a class="boton boton--acento" href="trabajos.html"><span class="c1"></span><span class="c2"></span><span data-i18n="ver_todos">Ver todos los trabajos</span> <span class="flecha">→</span></a></p>
+      </div>
+    </section>
+
+    <!-- ===== 4. CIERRE: la bolita roja crece hasta llenar la pantalla ===== -->
+    <section class="bloque cierre" aria-labelledby="titulo-cierre">
+      <div class="contenedor cierre__texto sobre-lienzo">
+        <p class="etiqueta etiqueta--raya aparece" data-i18n="cierre_etiqueta">¿Trabajamos juntos?</p>
+        <h2 id="titulo-cierre" class="aparece" data-i18n="cierre_titulo">Hagamos algo <span class="acento">con intención</span></h2>
+        <a class="cierre__correo aparece" href="mailto:ahriel.c.garcia@gmail.com">ahriel.c.garcia@gmail.com</a>
+        <p class="aparece"><a class="boton" href="sobre-mi.html#contacto"><span class="c1"></span><span class="c2"></span><span data-i18n="cierre_boton">Conóceme y escríbeme</span> <span class="flecha">→</span></a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <span>© <span data-anio>2026</span> Ahriel Cadena García</span>
+    <div class="pie__enlaces">
+      <a href="mailto:ahriel.c.garcia@gmail.com">Email</a>
+      <a href="https://www.instagram.com/aliiii7867/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.behance.net/ahrielg" target="_blank" rel="noopener">Behance</a>
+    </div>
+  </footer>
+
+  <div class="transicion" aria-hidden="true"><img src="assets/img/marca/logo-negativo.webp" alt=""></div>
+
+  <script src="js/textos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/inicio.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" class="cargando">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre mí · Ahriel G.</title>
+  <meta name="description" content="Ahriel Cadena García (Ahriel G.), diseñadora digital freelance en La Paz, Bolivia. Bio y contacto.">
+  <meta name="theme-color" content="#0F0D18">
+  <link rel="icon" href="assets/img/marca/favicon.png">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="pagina-sobre">
+  <a class="saltar" href="#contenido" data-i18n="saltar">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="cabecera__logo" href="index.html" aria-label="Ahriel G. · Inicio" data-i18n-aria="aria_inicio">
+      <img src="assets/img/marca/logo-blanco.webp" alt="Ahriel g." width="777" height="280">
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <ul class="menu__lista">
+        <li><a class="menu__enlace" href="index.html"><span data-i18n="nav_inicio">Inicio</span></a></li>
+        <li><a class="menu__enlace" href="trabajos.html"><span data-i18n="nav_trabajos">Trabajos</span></a></li>
+        <li><a class="menu__enlace" href="caso.html"><span data-i18n="nav_caso">Caso de estudio</span></a></li>
+        <li><a class="menu__enlace" href="sobre-mi.html" aria-current="page"><span data-i18n="nav_sobre">Sobre mí</span></a></li>
+      </ul>
+      <button class="idioma" type="button"><b>ES</b> / EN</button>
+      <button class="menu__abrir" type="button" aria-expanded="false" aria-label="Abrir menú" data-i18n-aria="aria_menu"><i></i><i></i></button>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="encabezado contenedor">
+      <p class="etiqueta etiqueta--raya aparece" data-i18n="so_etiqueta">Sobre mí</p>
+      <h1 class="aparece" data-i18n="so_titulo">Hola, soy <span class="acento">Ahriel G.</span></h1>
+    </section>
+
+    <section class="contenedor sobre">
+      <!-- Bolita con el logo y el efecto "Tech Text" (js/tech-text.js):
+           el texto vive en un canvas dentro de la bolita, centrado y contenido en ella -->
+      <div class="sobre__marca aparece">
+        <div class="bolita-logo" role="img" aria-label="Logotipo Ahriel g." data-i18n-aria="aria_logo">
+          <div class="bolita-logo__texto" data-texto="Ahriel g."></div>
+        </div>
+      </div>
+      <div class="sobre__texto">
+        <p class="destacado aparece" data-i18n="so_p1">Diseñadora digital y freelance con base en La Paz, Bolivia.</p>
+        <p class="aparece" data-i18n="so_p2">Me especializo en identidad de marca, diseño editorial, animación tipográfica y contenido para redes. Estudio diseño digital y me muevo entre el diseño gráfico, el diseño web y la producción audiovisual.</p>
+        <p class="aparece" data-i18n="so_p3">Trabajo con una filosofía propia: <strong>orden en el desorden</strong>. Tomo ideas dispersas y las convierto en piezas cohesionadas, con ojo para los detalles y para la intención detrás de cada proyecto. Me gusta mezclar lo editorial con lo lúdico y lo formal con lo cercano.</p>
+        <p class="aparece" data-i18n="so_p4">Mi marca gira alrededor de un vórtice: el punto de tensión entre la calma y la intensidad. No busco resolver esa tensión, sino usarla como motor creativo. Por eso esta web empieza con una bolita roja rodeada de fragmentos que puedes ordenar.</p>
+      </div>
+    </section>
+
+    <!-- Filas de palabras que se desplazan (el contenido se repite para que el bucle no se corte) -->
+    <section class="cintas" aria-label="Disciplinas" data-i18n-aria="aria_disciplinas">
+      <div class="cinta" aria-hidden="true">
+        <span data-i18n="ci1">Branding</span><span><b>✦</b></span><span data-i18n="ci2">Diseño editorial</span><span><b>✦</b></span><span data-i18n="ci3">Animación tipográfica</span><span><b>✦</b></span>
+        <span data-i18n="ci1">Branding</span><span><b>✦</b></span><span data-i18n="ci2">Diseño editorial</span><span><b>✦</b></span><span data-i18n="ci3">Animación tipográfica</span><span><b>✦</b></span>
+      </div>
+      <div class="cinta cinta--inversa" aria-hidden="true">
+        <span data-i18n="ci4">Contenido para redes</span><span><b>✦</b></span><span data-i18n="ci5">Diseño gráfico</span><span><b>✦</b></span><span data-i18n="ci6">Diseño web</span><span><b>✦</b></span>
+        <span data-i18n="ci4">Contenido para redes</span><span><b>✦</b></span><span data-i18n="ci5">Diseño gráfico</span><span><b>✦</b></span><span data-i18n="ci6">Diseño web</span><span><b>✦</b></span>
+      </div>
+      <p class="solo-lector" data-i18n="so_disc">Branding, diseño editorial, animación tipográfica, contenido para redes, diseño gráfico y diseño web.</p>
+    </section>
+
+    <section class="contacto contenedor" id="contacto" aria-labelledby="titulo-contacto">
+      <p class="etiqueta etiqueta--raya aparece" data-i18n="co_etiqueta">Contacto</p>
+      <h2 id="titulo-contacto" class="aparece" data-i18n="co_titulo">¿Tienes un proyecto? <span class="acento">Hablemos</span></h2>
+      <ul class="contacto__lista">
+        <li class="aparece"><a href="mailto:ahriel.c.garcia@gmail.com">ahriel.c.garcia@gmail.com <small data-i18n="co_escribir">Escribir</small></a></li>
+        <li class="aparece"><button type="button" data-copiar="ahriel.c.garcia@gmail.com"><span data-i18n="co_copiar_t">Copiar mi correo</span> <small data-i18n="co_copiar">Copiar</small></button></li>
+        <li class="aparece"><a href="https://www.instagram.com/aliiii7867/" target="_blank" rel="noopener">Instagram · @aliiii7867 <small data-i18n="co_abrir">Abrir ↗</small></a></li>
+        <li class="aparece"><a href="https://www.behance.net/ahrielg" target="_blank" rel="noopener">Behance · ahrielg <small data-i18n="co_abrir">Abrir ↗</small></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <span>© <span data-anio>2026</span> Ahriel Cadena García</span>
+    <div class="pie__enlaces">
+      <a href="mailto:ahriel.c.garcia@gmail.com">Email</a>
+      <a href="https://www.instagram.com/aliiii7867/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.behance.net/ahrielg" target="_blank" rel="noopener">Behance</a>
+    </div>
+  </footer>
+
+  <div class="transicion" aria-hidden="true"><img src="assets/img/marca/logo-negativo.webp" alt=""></div>
+
+  <script src="js/textos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/tech-text.js"></script>
+  <script src="js/sobre-mi.js"></script>
+</body>
+</html>

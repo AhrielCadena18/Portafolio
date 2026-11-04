@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es" class="cargando">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Un besito más · Caso de estudio · Ahriel G.</title>
+  <meta name="description" content="Caso de estudio: portada y contraportada del álbum Un besito más, de Jesse & Joy. Investigación, concepto, proceso y resultado.">
+  <meta name="theme-color" content="#0F0D18">
+  <link rel="icon" href="assets/img/marca/favicon.png">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="pagina-caso">
+  <a class="saltar" href="#contenido" data-i18n="saltar">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="cabecera__logo" href="index.html" aria-label="Ahriel G. · Inicio" data-i18n-aria="aria_inicio">
+      <img src="assets/img/marca/logo-blanco.webp" alt="Ahriel g." width="777" height="280">
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <ul class="menu__lista">
+        <li><a class="menu__enlace" href="index.html"><span data-i18n="nav_inicio">Inicio</span></a></li>
+        <li><a class="menu__enlace" href="trabajos.html"><span data-i18n="nav_trabajos">Trabajos</span></a></li>
+        <li><a class="menu__enlace" href="caso.html" aria-current="page"><span data-i18n="nav_caso">Caso de estudio</span></a></li>
+        <li><a class="menu__enlace" href="sobre-mi.html"><span data-i18n="nav_sobre">Sobre mí</span></a></li>
+      </ul>
+      <button class="idioma" type="button"><b>ES</b> / EN</button>
+      <button class="menu__abrir" type="button" aria-expanded="false" aria-label="Abrir menú" data-i18n-aria="aria_menu"><i></i><i></i></button>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="encabezado contenedor">
+      <p class="etiqueta etiqueta--raya aparece" data-i18n="ca_etiqueta">Caso de estudio · Diseño conceptual</p>
+      <h1 class="aparece" data-i18n="ca_titulo">Un besito <span class="acento">más</span></h1>
+      <p class="aparece" data-i18n="ca_intro">Cómo convertí un álbum nacido del duelo en una portada que se siente como una ofrenda iluminada. Pasa las páginas deslizando, con las flechas o con el teclado.</p>
+    </section>
+
+    <!-- ===== REVISTA: cada .pagina es una hoja. La altura se ajusta sola al
+         contenido más largo, así que ningún texto se corta. ===== -->
+    <section class="revista contenedor" aria-roledescription="carrusel" aria-label="Caso de estudio por páginas" data-i18n-aria="aria_revista">
+      <div class="revista__escena">
+
+        <!-- 0 · PORTADA -->
+        <article class="pagina pagina--oscura" aria-roledescription="página">
+          <div class="pagina__texto">
+            <p class="etiqueta etiqueta--raya" data-i18n="ca_p0_et">Jesse &amp; Joy · Portada y contraportada</p>
+            <h2 data-i18n="ca_p0_t">Un besito más</h2>
+            <p data-i18n="ca_p0_p">Jesse &amp; Joy grabaron este álbum después de la muerte de su padre. Mi propuesta fue que la ausencia no se viera como un vacío, sino como luz.</p>
+            <button class="escuchar" type="button" aria-pressed="false">
+              <span class="escuchar__icono" aria-hidden="true">▶</span>
+              <span data-i18n="ca_escuchar">Escucha 20 s del álbum</span>
+              <span class="escuchar__barras" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </button>
+            <audio src="assets/audio/un-besito-mas-fragmento.mp3" preload="none"></audio>
+          </div>
+          <div class="pagina__imagen cubrir cuadrada"><img src="assets/img/caso/portada.webp" alt="Portada final del disco Un besito más: una calavera y una mujer de perfil unidas por flores de cempasúchil sobre fondo negro" data-i18n-alt="alt_portada"></div>
+        </article>
+
+        <!-- 1 · FICHA TÉCNICA -->
+        <article class="pagina" aria-roledescription="página">
+          <div class="pagina__texto">
+            <p class="etiqueta etiqueta--raya" data-i18n="ca_p1_et">Ficha técnica</p>
+            <h2 data-i18n="ca_p1_t">El proyecto en una mirada</h2>
+            <table class="conceptos">
+              <tr><td data-i18n="f_proyecto">Proyecto</td><td data-i18n="ca_f1">Portada y contraportada del disco “Un besito más”</td></tr>
+              <tr><td data-i18n="f_cliente">Artista</td><td>Jesse &amp; Joy</td></tr>
+              <tr><td data-i18n="f_contexto">Contexto</td><td data-i18n="ca_f2">Diseño Conceptual · segundo parcial</td></tr>
+              <tr><td data-i18n="f_anio">Año</td><td data-i18n="ca_f0">Octubre de 2026</td></tr>
+              <tr><td data-i18n="f_disciplina">Disciplina</td><td data-i18n="ca_f3">Diseño conceptual, ilustración y diseño editorial</td></tr>
+              <tr><td data-i18n="f_herramientas">Herramientas</td><td data-i18n="ca_f4">Krita y Canva</td></tr>
+              <tr><td data-i18n="f_rol">Mi rol</td><td data-i18n="ca_f5">Proyecto individual: investigación, concepto, ilustración y diseño</td></tr>
+              <tr><td data-i18n="f_metodo">Método</td><td data-i18n="ca_f6">Design thinking: empatizar, definir, idear, prototipar y testear</td></tr>
+            </table>
+          </div>
+          <div class="pagina__imagen cubrir cuadrada"><img src="assets/img/caso/contraportada.webp" alt="Contraportada del disco con la lista de canciones" data-i18n-alt="alt_contra" loading="lazy"></div>
+        </article>
+
+        <!-- 2 · ACTO 1: EL CONFLICTO Y EL BRIEF -->
+        <article class="pagina" aria-roledescription="página">
+          <div class="pagina__texto">
+            <p class="etiqueta etiqueta--raya" data-i18n="ca_p2_et">Acto 1 · El conflicto y el brief</p>
+            <h2 data-i18n="ca_p2_t">Un disco hecho de <span class="acento">duelo</span></h2>
+            <p data-i18n="ca_p2_a">Jesse &amp; Joy escribieron la canción que da nombre al álbum pocos días después de perder a su padre. Habla de que nada es para siempre y de la esperanza de reencontrarse para darse ese “besito” que quedó pendiente.</p>
+            <h3 data-i18n="ca_p2_h1">Para quién</h3>
+            <p data-i18n="ca_p2_b">Personas de 24 a 30 años que crecieron con el dúo y lo asocian a sus primeros desamores. Escuchan baladas y pop latino en playlists de desamor, casi siempre de noche, y buscan una compañía que le ponga palabras a lo que sienten.</p>
+            <h3 data-i18n="ca_p2_h2">El objetivo</h3>
+            <p data-i18n="ca_p2_c">Diseñar una portada y una contraportada que tradujeran ese duelo y la doble pertenencia de los hermanos —hijos de madre estadounidense y padre mexicano— sin caer en una tristeza literal.</p>
+          </div>
+          <div class="pagina__imagen"><img src="assets/img/caso/lamina-02.webp" alt="Lámina de la fase Empatizar: estudio del oyente y del artista" data-i18n-alt="alt_l02" loading="lazy"></div>
+        </article>
+
+        <!-- 3 · SECCIÓN ELECTIVA C: INVESTIGACIÓN E INTERPRETACIÓN -->
+        <article class="pagina" aria-roledescription="página">
+          <div class="pagina__texto">
+            <p class="etiqueta etiqueta--raya" data-i18n="ca_p3_et">Investigación e interpretación</p>
+            <h2 data-i18n="ca_p3_t">De lo que se siente a lo que se ve</h2>
+            <p data-i18n="ca_p3_a">Investigué la historia del álbum y su portada original, que une los volcanes Popocatépetl e Iztaccíhuatl con el lago Michigan. Después traduje cada emoción en un concepto visual concreto:</p>
+            <table class="conceptos">
+              <tr><td data-i18n="ca_s1">Duelo que se transforma</td><td data-i18n="ca_c1">Ausencia luminosa</td></tr>
+              <tr><td data-i18n="ca_s2">Despedida pendiente</td><td data-i18n="ca_c2">Gesto inconcluso</td></tr>
+              <tr><td data-i18n="ca_s3">Doble pertenencia</td><td data-i18n="ca_c3">Frontera líquida</td></tr>
+              <tr><td data-i18n="ca_s4">Memoria del padre</td><td data-i18n="ca_c4">Fotografía rota y recompuesta</td></tr>
+              <tr><td data-i18n="ca_s5">Dolor íntimo y contenido</td><td data-i18n="ca_c5">Calidez apagada</td></tr>
+              <tr><td data-i18n="ca_s6">Esperanza de reencuentro</td><td data-i18n="ca_c6">Eco</td></tr>
+              <tr><td data-i18n="ca_s7">Ternura, el “besito”</td><td data-i18n="ca_c7">Gesto mínimo</td></tr>
+            </table>
+            <p data-i18n="ca_p3_b"><strong>Insight:</strong> el disco no habla de la muerte, sino de la ausencia de alguien querido.</p>
+          </div>
+          <div class="pagina__imagen"><img src="assets/img/caso/lamina-03.webp" alt="Lámina de la fase Definir: sentimientos convertidos en conceptos visuales" data-i18n-alt="alt_l03" loading="lazy"></div>
+        </article>
+
+        <!-- 4 · ACTO 2: IDEAR -->
+        <article class="pagina" aria-roledescription="página">
+          <div class="pagina__texto">
+            <p class="etiqueta etiqueta--raya" data-i18n="ca_p4_et">Acto 2 · El proceso</p>
+            <h2 data-i18n="ca_p4_t">Muchas ideas para cada concepto</h2>
+            <p data-i18n="ca_p4_a">Para cada concepto hice una lluvia de ideas: una silla vacía junto a una ventana al atardecer, unas manos que casi se tocan, dos paisajes fundidos en un mismo horizonte, reparaciones doradas como en el kintsugi, un beso en la frente.</p>
+            <p data-i18n="ca_p4_b">El mapa mental ordenó todo en tres columnas: el sentimiento, el concepto visual y cómo se vería. Toca una lámina para verla en grande.</p>
+            <div class="miniaturas">
+              <button type="button" data-ampliar="assets/img/caso/lamina-04.webp"><img src="assets/img/caso/lamina-04.webp" alt="Lluvia de ideas, parte 1" data-i18n-alt="alt_l04" loading="lazy"></button>
+              <button type="button" data-ampliar="assets/img/caso/lamina-05.webp"><img src="assets/img/caso/lamina-05.webp" alt="Lluvia de ideas, parte 2" data-i18n-alt="alt_l05" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="pagina__imagen"><img src="assets/img/caso/lamina-06.webp" alt="Mapa mental: sentimiento, concepto visual y cómo se vería" data-i18n-alt="alt_l06" loading="lazy"></div>
+        </article>
+
+        <!-- 5 · ACTO 2: MOODBOARD, BOCETOS Y PROTOTIPO -->
+        <article class="pagina" aria-roledescription="página">
+          <div class="pagina__texto">
+            <p class="etiqueta etiqueta--raya" data-i18n="ca_p5_et">Acto 2 · La transformación</p>
+            <h2 data-i18n="ca_p5_t">Del moodboard al <span class="acento">prototipo</span></h2>
+            <p data-i18n="ca_p5_a">El moodboard fijó el tono: atardeceres desaturados en ámbar, terracota y azul noche, grano suave y luz baja. En los bocetos probé distintas composiciones hasta encontrar la que reunía todos los conceptos.</p>
+            <p data-i18n="ca_p5_b">La clave fue el Día de Muertos, una tradición mexicana que une la muerte con el amor y recuerda a quien se fue sin borrarlo.</p>
+            <div class="miniaturas">
+              <button type="button" data-ampliar="assets/img/caso/lamina-07.webp"><img src="assets/img/caso/lamina-07.webp" alt="Moodboard" data-i18n-alt="alt_l07" loading="lazy"></button>
+              <button type="button" data-ampliar="assets/img/caso/lamina-08.webp"><img src="assets/img/caso/lamina-08.webp" alt="Bocetos" data-i18n-alt="alt_l08" loading="lazy"></button>
+            </div>
+          </div>
+          <div class="pagina__imagen"><img src="assets/img/caso/lamina-09.webp" alt="Lámina de la fase Prototipar" data-i18n-alt="alt_l09" loading="lazy"></div>
+        </article>
+
+        <!-- 6 · ACTO 3: EL DESENLACE -->
+        <article class="pagina pagina--oscura" aria-roledescription="página">
+          <div class="pagina__texto">
+            <p class="etiqueta etiqueta--raya" data-i18n="ca_p6_et">Acto 3 · El desenlace</p>
+            <h2 data-i18n="ca_p6_t">Una ofrenda <span class="acento">iluminada</span></h2>
+            <p data-i18n="ca_p6_a">Dibujé una calavera y una mujer de perfil, muy cerca pero sin tocarse, con flores que cruzan de una a otra: el beso que ya no se puede dar y la frontera borrosa entre los vivos y los muertos.</p>
+            <p data-i18n="ca_p6_b">El fondo negro evoca el luto y la noche, y hace que los naranjas del cempasúchil, los magentas y los rojos brillen como velas. El verde de las hojas es el único contrapunto frío.</p>
+            <p data-i18n="ca_p6_c">Elegí una serif de alto contraste: “Jesse y Joy” en cursiva, como una firma; “UN BESITO” grande y en blanco; y “MÁS” pequeño y espaciado, como un susurro de lo que quedó pendiente.</p>
+          </div>
+          <div class="pagina__imagen cubrir cuadrada"><img src="assets/img/caso/ilustracion.webp" alt="Ilustración final: flores otoñales sobre fondo negro" data-i18n-alt="alt_ilus" loading="lazy"></div>
+        </article>
+
+        <!-- 7 · ACTO 3: EL IMPACTO -->
+        <article class="pagina pagina--oscura" aria-roledescription="página">
+          <div class="pagina__texto">
+            <p class="etiqueta etiqueta--raya" data-i18n="ca_p7_et">Acto 3 · El impacto</p>
+            <h2 data-i18n="ca_p7_t">La pieza en su contexto</h2>
+            <p data-i18n="ca_p7_a">Aplicada al disco, la portada está pensada para leerse en tres escalas: de lejos, en miniatura dentro de una aplicación de música y en detalle, cuando el disco está en las manos.</p>
+            <p data-i18n="ca_p7_b">Cada decisión de color y de tipografía nace de la investigación: la ausencia convertida en luz, la ofrenda en lugar del vacío.</p>
+            <p data-i18n="ca_p7_c">En la evaluación, el concepto y la solución visual se consideraron sólidos. La observación principal fue que faltaba mostrar con más claridad cómo filtré las ideas y por qué elegí cada camino. Me quedo con ese aprendizaje: documentar la toma de decisiones con la misma intención que la pieza final, para que se vea no solo el resultado, sino el criterio que hay detrás.</p>
+            <div class="miniaturas">
+              <button type="button" data-ampliar="assets/img/caso/lamina-10.webp"><img src="assets/img/caso/lamina-10.webp" alt="Lámina de resultados" data-i18n-alt="alt_l10" loading="lazy"></button>
+              <button type="button" data-ampliar="assets/img/caso/contraportada.webp"><img src="assets/img/caso/contraportada.webp" alt="Contraportada" data-i18n-alt="alt_contra" loading="lazy"></button>
+            </div>
+            <p style="margin-top:22px"><a class="boton boton--acento" href="trabajos.html"><span class="c1"></span><span class="c2"></span><span data-i18n="ca_mas_trabajos">Ver más trabajos</span> <span class="flecha">→</span></a></p>
+          </div>
+          <div class="pagina__imagen cubrir cuadrada"><img src="assets/img/caso/mockup-floral.webp" alt="Mockup del disco Un besito más con la portada floral" data-i18n-alt="alt_mockup" loading="lazy"></div>
+        </article>
+      </div>
+
+      <div class="revista__controles">
+        <button class="revista__flecha" type="button" data-dir="-1" aria-label="Página anterior" data-i18n-aria="aria_anterior">←</button>
+        <div class="revista__puntos" role="tablist"></div>
+        <button class="revista__flecha" type="button" data-dir="1" aria-label="Página siguiente" data-i18n-aria="aria_siguiente">→</button>
+      </div>
+      <p class="revista__pista" data-i18n="ca_pista">Desliza con el dedo, arrastra con el mouse o usa ← →</p>
+    </section>
+  </main>
+
+  <div class="visor" role="dialog" aria-modal="true" aria-label="Lámina ampliada" data-i18n-aria="aria_visor">
+    <button type="button" aria-label="Cerrar" data-i18n-aria="aria_cerrar">✕</button>
+    <img alt="">
+  </div>
+
+  <footer class="pie">
+    <span>© <span data-anio>2026</span> Ahriel Cadena García</span>
+    <div class="pie__enlaces">
+      <a href="mailto:ahriel.c.garcia@gmail.com">Email</a>
+      <a href="https://www.instagram.com/aliiii7867/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.behance.net/ahrielg" target="_blank" rel="noopener">Behance</a>
+    </div>
+  </footer>
+
+  <div class="transicion" aria-hidden="true"><img src="assets/img/marca/logo-negativo.webp" alt=""></div>
+
+  <script src="js/textos.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/caso.js"></script>
+</body>
+</html>
