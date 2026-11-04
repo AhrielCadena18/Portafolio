@@ -66,7 +66,7 @@ Abre `css/estilos.css`. Arriba de todo están los colores de tu marca (`--rojo`,
 
 ## 8. Publicar en GitHub Pages
 
-Ya está publicado en **https://ahrielcadena18.github.io/portafolio/** (repositorio `AhrielCadena18/portafolio`). Si algún día quieres subir cambios tú misma:
+Ya está publicado en **https://ahrielcadena18.github.io/Portafolio/** (repositorio `AhrielCadena18/Portafolio`). Si algún día quieres subir cambios tú misma:
 
 1. Entra al repositorio en github.com.
 2. **Add file → Upload files**. Arrastra **el contenido** de `portafolio-web` (no la carpeta en sí): `index.html` tiene que quedar en la raíz, junto a `css/`, `js/`, `assets/` y `.nojekyll`. (En Mac, para ver `.nojekyll` en Finder pulsa Cmd + Shift + punto.)
