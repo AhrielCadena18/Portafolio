@@ -44,7 +44,6 @@ Guía rápida para abrir, revisar, editar y publicar tu portafolio tú misma.
 - **Español:** búscalo directamente en el `.html` (Cmd + F en VS Code) y cámbialo.
 - **Inglés:** cada texto traducible tiene una marca como `data-i18n="exp_reto"`. Busca esa misma clave en `js/textos.js` y cambia el texto en inglés.
 - Si agregas un texto nuevo, ponle `data-i18n="mi_clave"` en el HTML y añade `mi_clave: 'English text',` en `js/textos.js`. Si no lo traduces, se queda en español.
-- **Pendientes:** busca `[COMPLETAR` en los `.html` y en `js/textos.js`. Cada uno marca un dato que solo tú conoces (año, herramientas, equipo, aprendizajes…). Reemplaza el texto completo, corchetes incluidos.
 
 ## 5. Agregar fotos al pasaje de Lit Killah
 

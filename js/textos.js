@@ -143,7 +143,7 @@ window.TEXTOS_EN = {
   zag_h1: 'An animated poster about the Zagreb School, the animation movement born in Croatia, for the Composition and Motion course. I was in charge of the composition, the design and the animation.',
   zag_h2: 'To create a piece that works in two ways: as a still poster that holds up on its own, and as an animation that gives meaning to the movement.',
   zag_h3: 'I first solved the composition in Illustrator. Then I animated it in After Effects around a character climbing a staircase for 26 seconds.',
-  zag_h4: 'A warm palette of oranges and pinks unifies the whole piece. The character’s climb guides the eye through the poster. <span class="completar">[TO COMPLETE: what the staircase represents or why you chose it]</span>.',
+  zag_h4: 'A warm palette of oranges and pinks unifies the whole piece. The character’s climb guides the eye through the poster.',
   zag_h5: 'A poster that holds up as a still and comes alive in motion. Drag the line on the card to compare both versions.',
   zag_cap1: 'The still composition',
   zag_cap2: 'The animated poster, with sound',
